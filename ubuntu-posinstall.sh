@@ -141,7 +141,7 @@ programas=(
   gdebi
   ubuntu-restricted-extras
   dconf-editor
-  gnome-tweak-tool
+  gnome-tweaks
   git
   lxqt-sudo
   curl
@@ -228,9 +228,10 @@ mkdir $HOME/Downloads/tema-baixado
 
 # --------------------------------------- PÓS-INSTALAÇÃO ------------------------------------ #
 ## Finalização, atualização e limpeza##
+echo -e "${VERDE}[INFO] - ATUALIZANDO UPDATE E DIST-UPGRADE! :)${SEM_COR}"
 apt_update -y;
+echo -e "${VERDE}[INFO] - AUTOREMOVE INICIADO! :)${SEM_COR}"
 sudo apt autoremove -y;
-nautilus -q
 # -------------------------------------------------------------------------- #
 # ----------------------------- CONFIGS ----------------------------- #
 
@@ -245,27 +246,17 @@ mkdir /home/$USER/Resolve
 mkdir /home/$USER/AppImage
 mkdir /home/$USER/Vídeos/'OBS Rec'
 
-#Adiciona atalhos ao Nautilus
-
-if test -f "$FILE"; then
-    echo "$FILE já existe"
-else
-    echo "$FILE não existe, criando..."
-    touch /home/$USER/.config/gkt-3.0/bookmarks
-fi
-
-echo "file:///home/$USER/EDITAR 🔵 EDITAR" >> $FILE
-echo "file:///home/$USER/AppImage" >> $FILE
-echo "file:///home/$USER/Resolve 🔴 Resolve" >> $FILE
-echo "file:///home/$USER/TEMP 🕖 TEMP" >> $FILE
-
 #Download do Electrum AppImage
 wget -c "$URL_ELECTRUM_APPIMAGE" -P /home/$USER/AppImage
 
 ## finalização
+echo -e "${VERDE}[INFO] - ATUALIZANDO UPDATE! :)${SEM_COR}"
 apt_update -y
+echo -e "${VERDE}[INFO] - ATUALIZANDO UPDATE E DIST-UPGRADE! :)${SEM_COR}"
 sudo apt update && sudo apt dist-upgrade -y
+echo -e "${VERDE}[INFO] - ATUALIZANDO UPGRADE! :)${SEM_COR}"
 sudo apt upgrade
+echo -e "${VERDE}[INFO] - AUTOREMOVE INICIADO! :)${SEM_COR}"
 sudo apt autoremove -y
 echo -e "${VERDE}[INFO] - Script finalizado, instalação concluída! :)${SEM_COR}"
 # -------------------------------------------------------------------------------------------- #
