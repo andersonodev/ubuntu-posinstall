@@ -104,13 +104,6 @@ wget -c "$URL_MEGA"                -P "$DIRETORIO_DOWNLOADS"
 wget -c "$URL_PROTON_VPN"          -P "$DIRETORIO_DOWNLOADS"
 # ----------------------------------------------------------------------------------------------- #
 
-
-
-#atualiza tudo
-sudo apt-get update && sudo apt-get upgrade
-apt_update -y
-
-
 # --------------------------------- PROGRAMAS APT ------------------------------------------------ #
 
 ##LIST
