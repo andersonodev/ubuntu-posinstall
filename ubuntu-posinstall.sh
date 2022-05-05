@@ -168,6 +168,8 @@ sudo snap install firefox;
 sudo snap install darktable; 
 sudo snap install whatsdesk; 
 sudo snap install stellarium-daily;
+sudo snap install blender;
+sudo snap install inkscape;
 sudo snap install kdenlive;
 sudo snap install okular;
 sudo snap install telegram-desktop;
