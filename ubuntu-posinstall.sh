@@ -135,6 +135,7 @@ programas=(
   ubuntu-restricted-extras
   dconf-editor
   gnome-tweaks
+  cairo-dock
   git
   lxqt-sudo
   curl
