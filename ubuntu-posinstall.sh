@@ -135,7 +135,7 @@ programas=(
   ubuntu-restricted-extras
   dconf-editor
   gnome-tweaks
-  cairo-dock
+  #cairo-dock
   git
   lxqt-sudo
   curl
@@ -169,7 +169,7 @@ sudo snap install firefox;
 sudo snap install darktable; 
 sudo snap install whatsdesk; 
 sudo snap install stellarium-daily;
-sudo snap install blender;
+sudo snap install blender --classic;
 sudo snap install inkscape;
 sudo snap install kdenlive;
 sudo snap install okular;
@@ -177,6 +177,8 @@ sudo snap install telegram-desktop;
 sudo snap install pycharm-community --classic;
 sudo snap install android-studio --classic;
 sudo snap install retroarch;
+
+sudo snap refresh;
 
 #Not install
 
