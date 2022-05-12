@@ -140,6 +140,7 @@ programas=(
   lxqt-sudo
   curl
   fonts-hack-ttf
+  discord
 )
 
 # Instalar programas no apt
@@ -174,12 +175,10 @@ sudo snap install inkscape;
 sudo snap install kdenlive;
 sudo snap install okular;
 sudo snap install telegram-desktop;
-
-sudo snap install discord;
 sudo snap install obs-studio;
 sudo snap install pycharm-community --classic;
-sudo snap install code --classic;
 sudo snap install android-studio --classic;
+sudo snap install retroarch;
 
 #Not install
 
