@@ -245,6 +245,9 @@ mkdir /home/$USER/Vídeos/'OBS Rec'
 wget -c "$URL_ELECTRUM_APPIMAGE" -P /home/$USER/AppImage
 
 ## finalização
+
+echo -e "${VERDE}[INFO] - ATUALIZANDO SNAP! :)${SEM_COR}"
+sudo snap refresh;
 echo -e "${VERDE}[INFO] - ATUALIZANDO UPDATE! :)${SEM_COR}"
 apt_update -y
 echo -e "${VERDE}[INFO] - ATUALIZANDO UPDATE E DIST-UPGRADE! :)${SEM_COR}"
