@@ -140,6 +140,7 @@ programas=(
   curl
   fonts-hack-ttf
   #discord
+  #virtualbox
 )
 
 sudo apt install snapd -y;
@@ -175,6 +176,7 @@ sudo apt install lxqt-sudo -y;
 sudo apt install curl -y;
 sudo apt install fonts-hack-ttf -y;
 #sudo apt install discord -y;
+#sudo apt install virtualbox -y;
 
 
 # Instalar programas no apt
