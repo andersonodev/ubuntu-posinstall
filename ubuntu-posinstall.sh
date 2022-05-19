@@ -10,9 +10,8 @@ set -e
 # ------------------------------------------------------------------------ #
 #
 # COMO USAR?
-#   $ ./ubuntu-postinstall.sh
+# $ ./ubuntu-postinstall.sh
 #
-
 
 #==============================================================================================
 #==============================================================================================
@@ -104,17 +103,18 @@ wget -c "$URL_MEGA"                -P "$DIRETORIO_DOWNLOADS"
 wget -c "$URL_PROTON_VPN"          -P "$DIRETORIO_DOWNLOADS"
 # ----------------------------------------------------------------------------------------------- #
 
-# --------------------------------- PROGRAMAS APT ------------------------------------------------ #
+# --------------------------------- PROGRAMAS .DEB ------------------------------------------------ #
 
 ##LIST
 programas=(
   snapd
+  flatpak
+  gnome-software-plugin-flatpak
   winff
   gparted
   gufw
   synaptic
-  gnome-sushi 
-  vlc
+  gnome-sushi
   code
   timeshift
   git
@@ -123,7 +123,7 @@ programas=(
   htop
   idle
   vim
-  plank
+  #plank
   wireshark
   bleachbit
   mixxx
@@ -162,32 +162,73 @@ echo -e "${VERDE}[INFO] - Instalando pacotes snap${SEM_COR}"
 
 ## Instalando pacotes Snap ##
 sudo snap install authy;
-sudo snap install obs-studio;
-sudo snap install spotify;
-sudo snap install photogimp;
-sudo snap install firefox;  
-sudo snap install darktable; 
-sudo snap install whatsdesk; 
 sudo snap install stellarium-daily;
 sudo snap install blender --classic;
-sudo snap install inkscape;
-sudo snap install kdenlive;
-sudo snap install okular;
-sudo snap install telegram-desktop;
-sudo snap install pycharm-community --classic;
-sudo snap install android-studio --classic;
-sudo snap install retroarch;
 
 sudo snap refresh;
 
 #Not install
 
+##sudo snap install retroarch;
+##sudo snap install whatsdesk;
+##sudo snap install telegram-desktop;
+##sudo snap install inkscape;
+##sudo snap install kdenlive;
+##sudo snap install okular;
+##sudo snap install pycharm-community --classic;
+##sudo snap install android-studio --classic;
+##sudo snap install darktable; 
+##sudo snap install vlc;
+##sudo snap install photogimp;
+##sudo snap install firefox;  
+##sudo snap install obs-studio;
+##sudo snap install spotify;
 ##sudo snap install simplenote;
 ##sudo snap install krita;
 ##sudo snap install skype;
 
 # ----------------------------------------------------------------------------------------- #
 
+##==============================================================================================
+##==============================================================================================
+
+# --------------------------------- PROGRAMAS Flatpak/flathub ------------------------------------------------ #
+
+## Instalando pacotes Flatpak ##
+echo -e "${VERDE}[INFO] - Instalando pacotes flatpak${SEM_COR}"
+
+
+flatpak install flathub com.obsproject.Studio -y
+flatpak install flathub org.gimp.GIMP -y
+flatpak install flathub com.spotify.Client -y
+flatpak install flathub com.bitwarden.desktop -y
+flatpak install flathub org.telegram.desktop -y
+flatpak install flathub org.freedesktop.Piper -y
+flatpak install flathub org.chromium.Chromium -y
+flatpak install flathub org.gnome.Boxes -y
+flatpak install flathub org.onlyoffice.desktopeditors -y
+flatpak install flathub org.qbittorrent.qBittorrent -y
+flatpak install flathub org.flameshot.Flameshot -y
+
+flatpak install flathub org.darktable.Darktable -y
+flatpak install flathub org.videolan.VLC -y
+flatpak install flathub com.google.AndroidStudio -y
+flatpak install flathub org.kde.okular -y
+flatpak install flathub org.kde.kdenlive -y
+flatpak install flathub org.inkscape.Inkscape -y
+flatpak install flathub org.telegram.desktop -y
+flatpak install flathub io.github.mimbrero.WhatsAppDesktop -y
+flatpak install flathub org.libretro.RetroArch -y
+
+flatpak install flathub com.jetbrains.PyCharm-Community -y
+flatpak install flathub com.jetbrains.PyCharm-Professional -y
+
+flatpak update;
+
+# ----------------------------------------------------------------------------------------- #
+
+##==============================================================================================
+##==============================================================================================
 
  # --------------------------------- INSTALANDO O TEMA -------------------------------------- #
 URL_FLAT_REMIX="https://github.com/daniruiz/flat-remix"
@@ -248,6 +289,8 @@ wget -c "$URL_ELECTRUM_APPIMAGE" -P /home/$USER/AppImage
 
 echo -e "${VERDE}[INFO] - ATUALIZANDO SNAP! :)${SEM_COR}"
 sudo snap refresh;
+echo -e "${VERDE}[INFO] - ATUALIZANDO FLATPAK! :)${SEM_COR}"
+flatpak update;
 echo -e "${VERDE}[INFO] - ATUALIZANDO UPDATE! :)${SEM_COR}"
 apt_update -y
 echo -e "${VERDE}[INFO] - ATUALIZANDO UPDATE E DIST-UPGRADE! :)${SEM_COR}"
