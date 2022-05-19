@@ -115,15 +115,14 @@ programas=(
   gufw
   synaptic
   gnome-sushi
-  code
+  #code
   timeshift
-  git
   xterm
   cmatrix
   htop
   idle
   vim
-  #plank
+  plank
   wireshark
   bleachbit
   mixxx
@@ -140,8 +139,43 @@ programas=(
   lxqt-sudo
   curl
   fonts-hack-ttf
-  discord
+  #discord
 )
+
+sudo apt install snapd -y;
+sudo apt install flatpak -y;
+sudo apt install gnome-software-plugin-flatpak -y;
+sudo apt install winff -y;
+sudo apt install gparted -y;
+sudo apt install gufw -y;
+sudo apt install synaptic -y;
+sudo apt install gnome-sushi -y;
+#sudo apt install code -y;
+sudo apt install timeshift -y;
+sudo apt install xterm -y;
+sudo apt install cmatrix -y;
+sudo apt install htop -y;
+sudo apt install idle -y;
+sudo apt install vim -y;
+sudo apt install plank -y;
+sudo apt install wireshark -y;
+sudo apt install bleachbit -y;
+sudo apt install mixxx -y;
+sudo apt install rawtherapee -y;
+sudo apt install filezilla -y;
+sudo apt install nemo -y;
+sudo apt install unrar -y;
+sudo apt install gdebi -y;
+sudo apt install ubuntu-restricted-extras -y;
+sudo apt install dconf-editor -y;
+sudo apt install gnome-tweaks -y;
+#sudo apt install cairo-dock -y;
+sudo apt install git -y;
+sudo apt install lxqt-sudo -y;
+sudo apt install curl -y;
+sudo apt install fonts-hack-ttf -y;
+#sudo apt install discord -y;
+
 
 # Instalar programas no apt
 echo -e "${VERDE}[INFO] - Instalando pacotes apt do repositório${SEM_COR}"
@@ -164,6 +198,7 @@ echo -e "${VERDE}[INFO] - Instalando pacotes snap${SEM_COR}"
 sudo snap install authy;
 sudo snap install stellarium-daily;
 sudo snap install blender --classic;
+sudo snap install code --classic;
 
 sudo snap refresh;
 
@@ -176,16 +211,18 @@ sudo snap refresh;
 ##sudo snap install kdenlive;
 ##sudo snap install okular;
 ##sudo snap install pycharm-community --classic;
+##sudo snap install pycharm-professional --classic
 ##sudo snap install android-studio --classic;
-##sudo snap install darktable; 
+##sudo snap install darktable;
 ##sudo snap install vlc;
 ##sudo snap install photogimp;
-##sudo snap install firefox;  
+##sudo snap install firefox;
 ##sudo snap install obs-studio;
 ##sudo snap install spotify;
 ##sudo snap install simplenote;
 ##sudo snap install krita;
 ##sudo snap install skype;
+##sudo snap install discord;
 
 # ----------------------------------------------------------------------------------------- #
 
@@ -222,6 +259,7 @@ flatpak install flathub org.libretro.RetroArch -y
 
 flatpak install flathub com.jetbrains.PyCharm-Community -y
 flatpak install flathub com.jetbrains.PyCharm-Professional -y
+flatpak install flathub com.discordapp.Discord -y
 
 flatpak update;
 
@@ -271,16 +309,6 @@ sudo apt autoremove -y;
 # -------------------------------------------------------------------------- #
 # ----------------------------- CONFIGS ----------------------------- #
 
-## GNOME - configurações ##
-
-echo -e "${VERDE}[INFO] - Configurando o sistema${SEM_COR}"
-
-#Cria pastas para produtividade no nautilus
-mkdir /home/$USER/TEMP
-mkdir /home/$USER/EDITAR 
-mkdir /home/$USER/Resolve
-mkdir /home/$USER/AppImage
-mkdir /home/$USER/Vídeos/'OBS Rec'
 
 #Download do Electrum AppImage
 wget -c "$URL_ELECTRUM_APPIMAGE" -P /home/$USER/AppImage
